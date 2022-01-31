@@ -48,7 +48,6 @@ predictions.selectExpr("to_json(struct(*)) AS value")\
 .writeStream\
 .option('checkpointLocation', 'tmp')\
 .format("kafka")\
-.outputMode("complete")\
 .option("kafka.bootstrap.servers", "instance-tram-1:9092")\
-.option("topic", "velocity")\
+.option("topic", "predictions")\
 .start()
