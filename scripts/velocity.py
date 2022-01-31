@@ -52,5 +52,6 @@ table3.selectExpr("to_json(struct(*)) AS value")\
 .option('checkpointLocation', 'tmp')\
 .format("kafka")\
 .option("kafka.bootstrap.servers", "instance-tram-1:9092")\
-.option("topic", "predictions")\
+.option("topic", "velocity")\
+.outputMode('complete')\
 .start()
